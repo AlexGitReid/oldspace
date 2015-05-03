@@ -7,7 +7,27 @@
 
         <h1>Just how old is space, exactly?</h1>
 
-        <p>Stay tuned to find out.</p>
+        <p id="spacetime">Calculating...</p>
+
+        <script>
+            function updateSpaceTime() {
+                var today = new Date();
+                var spaceday = new Date(13800000000, 0, 0, 0, 0, 0, 0);
+                var recordday = new Date(2015, 5, 2, 20, 0, 0, 0, 0);
+                var spaceage = new Date();
+                spaceage.setTime(spaceday - recordday + today);
+                var calctime = "Space is currently "
+                    + spaceage.getFullYear() + " years, "
+                    + spaceage.getMonth() + " months, "
+                    + spaceage.getDate() + " days, "
+                    + spaceage.getHours() + " hours, "
+                    + spaceage.getMinutes() + " minutes, and "
+                    + spaceage.getSeconds() + " seconds old.";
+                document.getElementById("spacetime").innerHTML = calctime;
+            }
+
+            setInterval(updateSpaceTime, 1000);
+        </script>
 
     </body>
 </html>
