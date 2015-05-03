@@ -12,17 +12,12 @@
         <script>
             function updateSpaceTime() {
                 var today = new Date();
-                var spaceday = new Date(13800000000, 0, 0, 0, 0, 0, 0);
                 var recordday = new Date(2015, 5, 2, 20, 0, 0, 0, 0);
-                var spaceage = new Date();
-                spaceage.setTime(spaceday - recordday + today);
+                var spaceyears = 13800000000 + today.getFullYear() - recordday.getFullYear();
+                var spacesecs = ((((today.getTime() - recordday.getTime())/1000) % 31536000 + 3156000) % 3156000);
                 var calctime = "Space is currently "
-                    + spaceage.getFullYear() + " years, "
-                    + spaceage.getMonth() + " months, "
-                    + spaceage.getDate() + " days, "
-                    + spaceage.getHours() + " hours, "
-                    + spaceage.getMinutes() + " minutes, and "
-                    + spaceage.getSeconds() + " seconds old.";
+                    + spaceyears + " years and "
+                    + spacesecs + " seconds old.";
                 document.getElementById("spacetime").innerHTML = calctime;
             }
 
