@@ -1,0 +1,9 @@
+/* TEAM */
+        Algorithms: Alex Reid
+        Github: AlexGitReid
+
+        Graphic design: John Dvorak
+        Github: JohnDvorak
+
+        Webmaster: Josaphat Valdivia
+        Github: Josaphat
